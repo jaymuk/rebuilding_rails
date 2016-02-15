@@ -9,7 +9,12 @@ module Rulers
         end
         klass, act = get_controller_and_action(env)
         controller = klass.new(env)
-        text = controller.send(act)
+        begin # capturing error
+          text = controller.send(act)
+        rescue
+          return [ 404, {'Content-Type' => 'text/html'}, ["ERROR!: EXCEPTION WAS RAISED AT QUOTES CONTROLLER"] ]
+        end
+
         [ 200, {'Content-Type' => 'text/html'}, [text] ]
       end
     end
