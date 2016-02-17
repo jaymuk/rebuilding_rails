@@ -1,5 +1,7 @@
 require "rulers/version"
 require "rulers/routing"
+require "rulers/util"
+require "rulers/dependencies"
 
 module Rulers
     class Application
@@ -12,7 +14,7 @@ module Rulers
         begin # capturing error
           text = controller.send(act)
         rescue
-          return [ 404, {'Content-Type' => 'text/html'}, ["ERROR!: EXCEPTION WAS RAISED AT QUOTES CONTROLLER"] ]
+          return [ 404, {'Content-Type' => 'text/html'}, ["ERROR!: EXCEPTION WAS RAISED AT QUOTES CONTROLLER - v3"] ]
         end
 
         [ 200, {'Content-Type' => 'text/html'}, [text] ]

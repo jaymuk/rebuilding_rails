@@ -7,10 +7,27 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    celluloid (0.16.0)
+      timers (~> 4.0.0)
+    ffi (1.9.8)
+    hitimes (1.2.2)
+    listen (2.10.0)
+      celluloid (~> 0.16.0)
+      rb-fsevent (>= 0.9.3)
+      rb-inotify (>= 0.9)
     rack (1.6.4)
+    rb-fsevent (0.9.4)
+    rb-inotify (0.9.5)
+      ffi (>= 0.5.0)
+    rerun (0.10.0)
+      listen (~> 2.7, >= 2.7.3)
+    timers (4.0.1)
+      hitimes
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  listen
+  rerun
   rulers!
