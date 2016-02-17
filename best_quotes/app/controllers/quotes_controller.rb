@@ -1,7 +1,6 @@
 class QuotesController < Rulers::Controller
   def a_quote
-    "This is version3 of Rulers now using rerun" +
-    "\n<pre>\n#{env}\n</pre>"
+    render :a_quote, :verb => :drunk
   end
 
   def exception # testing out how to handle exceptions
