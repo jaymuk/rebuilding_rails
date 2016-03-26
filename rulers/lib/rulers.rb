@@ -16,6 +16,7 @@ module Rulers
         begin # capturing error
           text = controller.send(act)
         rescue
+          p $! # global variable that always refers to last error
           return [ 404, {'Content-Type' => 'text/html'}, ["ERROR!: EXCEPTION WAS RAISED AT QUOTES CONTROLLER - v3"] ]
         end
 
